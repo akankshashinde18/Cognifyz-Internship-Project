@@ -1,0 +1,100 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styles for navigation menu */
+.navbar {
+    background-color: #333;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-nav {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 15px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* Hamburger menu styles */
+.navbar-toggler {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar-toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        display: none;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-toggler.active .navbar-toggler-icon {
+        background-color: transparent;
+    }
+
+    .navbar-toggler.active .navbar-toggler-icon::before {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggler.active .navbar-toggler-icon::after {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navbar-toggler.active + .navbar-collapse {
+        display: block;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-item {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
